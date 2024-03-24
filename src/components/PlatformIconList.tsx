@@ -6,7 +6,7 @@ import {
   FaLinux,
   FaAndroid,
 } from "react-icons/fa";
-import { MdPhoneIphone } from "react-icons/md";
+import { MdKayaking, MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { HStack, Icon } from "@chakra-ui/react";
@@ -18,22 +18,22 @@ interface Props {
 }
 
 function PlatformIconList({ platforms }: Props) {
-  const icons: { [key: string]: IconType } = {
+  const iconsMap: { [key: string]: IconType } = {
     pc: FaWindows,
     mac: FaApple,
     xbox: FaXbox,
     playstation: FaPlaystation,
     linux: FaLinux,
     android: FaAndroid,
-    iphone: MdPhoneIphone,
+    ios: MdPhoneIphone,
     nintendo: SiNintendo,
-    globe: BsGlobe,
+    web: BsGlobe,
   };
 
   return (
     <HStack marginY={1}>
       {platforms.map((platform) => {
-        return <Icon as={icons[platform.slug]} color={"gray.500"}></Icon>;
+        return <Icon as={iconsMap[platform.slug]} color={"gray.500"}></Icon>;
       })}
     </HStack>
   );
