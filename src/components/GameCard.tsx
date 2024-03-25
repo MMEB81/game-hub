@@ -1,14 +1,16 @@
 import {
-  Badge,
   Card,
   CardBody,
   HStack,
   Heading,
   Image,
+  Skeleton,
+  SkeletonText,
 } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import ScoreBadge from "./ScoreBadge";
+import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   game: Game;
@@ -17,7 +19,8 @@ interface Props {
 function GameCard({ game }: Props) {
   return (
     <Card borderRadius={"10px"} overflow={"hidden"}>
-      <Image src={game.background_image} />
+      <Image src={getCroppedImageUrl(game.background_image)} />
+
       <CardBody>
         <Heading>{game.name}</Heading>
         <HStack justifyContent={"space-between"}>
