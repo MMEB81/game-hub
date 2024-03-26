@@ -1,8 +1,9 @@
 import { List, ListItem, Text } from "@chakra-ui/react";
-import useGenres from "../hooks/useGenres";
+import useGenras, { Genre } from "../hooks/useGenres";
+import useData from "../hooks/useData";
 
 function GenreList() {
-  const { genres } = useGenres();
+  const { data: genres } = useGenras();
   return (
     <List>
       {genres.map((genre) => {
