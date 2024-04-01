@@ -13,7 +13,7 @@ function ScoreBadge({ metacritic: score }: Props) {
       paddingX={3}
       colorScheme={color}
       fontSize={"14px"}
-      variant={"subtle"}
+      variant={"outline"}
     >
       {score}
     </Badge>

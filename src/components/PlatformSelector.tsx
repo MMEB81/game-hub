@@ -14,10 +14,10 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   return (
     <Menu>
       <MenuButton
-        marginBottom={"10px"}
         as={Button}
         rightIcon={<BsChevronDown />}
-        size={"lg"}
+        size={"md"}
+        marginLeft={"10px"}
       >
         {selectedPlatform?.name || "Platforms"}
       </MenuButton>

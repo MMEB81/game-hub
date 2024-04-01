@@ -29,7 +29,7 @@ function GameGrid({ selectedGenre, selectedPlatform }: Props) {
           "2xl": 5,
         }}
         spacing={"20px"}
-        // padding={"10px"}
+        padding={"10px"}
       >
         {isLoading &&
           Skeletons.map((Skeleton) => (
