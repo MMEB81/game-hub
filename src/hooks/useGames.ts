@@ -17,6 +17,6 @@ export interface Platform {
 
 
 
-const useGames = (gameQuery : GameQuery) => useData<Game>("/games",{params : {genres :gameQuery.genre?.id,platforms : gameQuery.platform?.id,ordering : gameQuery.order?.slug }},[gameQuery])
+const useGames = (gameQuery : GameQuery) => useData<Game>("/games",{params : {genres :gameQuery.genre?.id,platforms : gameQuery.platform?.id,ordering : gameQuery.order?.slug,search : gameQuery.searchText,search_exact : true }},[gameQuery])
 
 export default useGames;
