@@ -1,6 +1,7 @@
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -20,32 +21,42 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
   if (isLoading) return <Spinner marginLeft={"15px"}></Spinner>;
   if (error) return null;
   return (
-    <List position={"sticky"} top={"10px"}>
-      {genres.map((genre) => {
-        return (
-          <ListItem key={genre.id} marginLeft={"8px"} padding={"8px"}>
-            <HStack>
-              <Image
-                src={getCroppedImageUrl(genre.image_background)}
-                boxSize={"32px"}
-                borderRadius={"8px"}
-              ></Image>
-              <Button
-                onClick={() => {
-                  onSelectGenre(genre);
-                }}
-                fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
-                variant={"link"}
-                fontSize={"20px"}
-                colorScheme={"gray.500"}
-              >
-                {genre.name}
-              </Button>
-            </HStack>
-          </ListItem>
-        );
-      })}
-    </List>
+    <>
+      <Heading fontSize={"2xl"} marginBottom={3} marginLeft={"16px"}>
+        Genres
+      </Heading>
+      <List position={"sticky"} top={"10px"}>
+        {genres.map((genre) => {
+          return (
+            <ListItem key={genre.id} marginLeft={"8px"} padding={"8px"}>
+              <HStack>
+                <Image
+                  src={getCroppedImageUrl(genre.image_background)}
+                  boxSize={"32px"}
+                  borderRadius={"8px"}
+                  objectFit={"cover"}
+                ></Image>
+                <Button
+                  onClick={() => {
+                    onSelectGenre(genre);
+                  }}
+                  fontWeight={
+                    selectedGenre?.id === genre.id ? "bold" : "normal"
+                  }
+                  variant={"link"}
+                  fontSize={"20px"}
+                  whiteSpace={"normal"}
+                  textAlign={"left"}
+                  // colorScheme={"gray.500"}
+                >
+                  {genre.name}
+                </Button>
+              </HStack>
+            </ListItem>
+          );
+        })}
+      </List>
+    </>
   );
 }
 
