@@ -3,6 +3,7 @@ import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import ScoreBadge from "./ScoreBadge";
 import getCroppedImageUrl from "../services/image-url";
+import Emoji from "./Emoji";
 
 interface Props {
   game: Game;
@@ -22,7 +23,10 @@ function GameCard({ game }: Props) {
           />
           <ScoreBadge metacritic={game.metacritic} />
         </HStack>
-        <Heading>{game.name}</Heading>
+
+        <Heading as={"h2"}>
+          {game.name + " "} {<Emoji rating_top={game.rating_top} />}
+        </Heading>
       </CardBody>
     </Card>
   );
