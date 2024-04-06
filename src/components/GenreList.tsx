@@ -47,7 +47,7 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
                   fontSize={"20px"}
                   whiteSpace={"normal"}
                   textAlign={"left"}
-                  // colorScheme={"gray.500"}
+                  colorScheme={"gray.500"}
                 >
                   {genre.name}
                 </Button>

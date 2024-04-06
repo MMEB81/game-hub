@@ -22,9 +22,9 @@ function GameGrid({ gameQuery }: Props) {
           sm: 1,
           md: 2,
           lg: 3,
-          "2xl": 5,
+          "2xl": 4,
         }}
-        spacing={"20px"}
+        spacing={6}
         padding={"10px"}
       >
         {isLoading &&
