@@ -10,7 +10,10 @@ export interface Genre {
 }
 
 
- const useGenras =()=> { return  {data : genres , isLoading : false,error : ""}};
+//  const useGenras =()=> { return  {data : genres , isLoading : false,error : ""}};
+const useGenras = ()=> {
+    
+}
  
 
 
