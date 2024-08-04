@@ -27,23 +27,13 @@ export interface Genre {
     
  }
 
-
-
-export default useGenres
-
+ export default useGenres
 
 
 
 
 
 
-const useGenras = ()=> {
-    return useQuery<FetchDataResponse<Genre>,Error>({
-     queryKey : ["ganres"],
-     queryFn : ()=>{
-         return apiClient.get<FetchDataResponse<Genre>>("/genres").then(res=>res.data)
-     }
-     ,staleTime :24*60*60*1000//24h,
-     ,initialData : {results : genres,count : genres.length}
-    })
- }
+
+
+
