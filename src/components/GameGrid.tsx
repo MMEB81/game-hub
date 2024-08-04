@@ -16,7 +16,7 @@ function GameGrid({ gameQuery }: Props) {
 
   return (
     <>
-      {error && <Text>{error}</Text>}
+      {error && <Text>{error.message}</Text>}
       <SimpleGrid
         columns={{
           sm: 1,
@@ -36,7 +36,7 @@ function GameGrid({ gameQuery }: Props) {
             </Center>
           ))}
 
-        {games.map((game) => {
+        {games?.results.map((game) => {
           return (
             <Box key={game.id} display={"flex"} justifyContent={"center"}>
               <GameCardContainer>

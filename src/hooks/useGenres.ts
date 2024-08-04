@@ -1,3 +1,7 @@
+
+import apiClient from "../services/api-client";
+import { useQuery } from "@tanstack/react-query";
+import { FetchDataResponse } from "../services/api-client"
 import genres from "../data/genres";
 
 
@@ -10,12 +14,36 @@ export interface Genre {
 }
 
 
+
 //  const useGenras =()=> { return  {data : genres , isLoading : false,error : ""}};
-const useGenras = ()=> {
+
+ const useGenres = ()=> {
+    return useQuery<FetchDataResponse<Genre>,Error>({
+        queryKey : ["genres"],
+        queryFn : ()=>apiClient.get<FetchDataResponse<Genre>>("/genres").then(res=>res.data),
+        staleTime : 24 * 60 * 60 * 1000, //24h
+        initialData : {results : genres,count : genres.length}
+    })
     
-}
- 
+ }
 
 
 
-export default useGenras
+export default useGenres
+
+
+
+
+
+
+
+const useGenras = ()=> {
+    return useQuery<FetchDataResponse<Genre>,Error>({
+     queryKey : ["ganres"],
+     queryFn : ()=>{
+         return apiClient.get<FetchDataResponse<Genre>>("/genres").then(res=>res.data)
+     }
+     ,staleTime :24*60*60*1000//24h,
+     ,initialData : {results : genres,count : genres.length}
+    })
+ }
