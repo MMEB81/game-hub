@@ -3,9 +3,9 @@ import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
-import { Genre } from "./hooks/useGenres";
+import { Genre } from "./services/genreService";
 import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/useGames";
+import { Platform } from "./services/platformService";
 import SortOrderSelector, { Order } from "./components/SortOrderSelector";
 import GameHeading from "./components/GameHeading";
 
@@ -14,6 +14,7 @@ export interface GameQuery {
   platform: Platform | null;
   order: Order | null;
   searchText: string;
+  pageSize: number;
 }
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     platform: {},
     order: {},
     searchText: "",
+    pageSize: 12,
   } as GameQuery);
   return (
     <Grid
