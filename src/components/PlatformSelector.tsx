@@ -5,16 +5,19 @@ import { Platform } from "../services/platformService";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
 }
 
-function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
+function PlatformSelector({ onSelectPlatform, selectedPlatformId }: Props) {
   const { data, error } = usePlatforms();
   if (error) return null;
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />} size={"md"}>
-        {selectedPlatform?.name || "Platforms"}
+        {data.results.reduce((res, platform) => {
+          if (platform.id === selectedPlatformId) res = platform.name;
+          return res;
+        }, "") || "Platforms"}
       </MenuButton>
       <MenuList>
         {data.results.map((platform) => (
