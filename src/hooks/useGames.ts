@@ -23,7 +23,7 @@ const useGames = (gameQuery : GameQuery)=> useInfiniteQuery<FetchDataResponse<Ga
   getNextPageParam : (lastPage,allPages )=> {
     return lastPage.next ? allPages.length + 1 : undefined
   },
-  keepPreviousData : true
+  // keepPreviousData : true
 
 })
   

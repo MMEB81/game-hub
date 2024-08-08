@@ -23,7 +23,7 @@ function App() {
     platform: {},
     order: {},
     searchText: "",
-    pageSize: 12,
+    pageSize: 9,
   } as GameQuery);
   return (
     <Grid
