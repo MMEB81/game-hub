@@ -17,7 +17,7 @@ import genreService, { Genre } from "../services/genreService";
         queryKey : ["genres"],
         queryFn : genreService.getAll,
         staleTime : 24 * 60 * 60 * 1000, //24h
-        initialData : {results : genres,count : genres.length}
+        initialData : genres
     })
     
  }

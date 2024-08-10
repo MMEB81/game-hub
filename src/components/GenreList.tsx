@@ -18,7 +18,6 @@ interface Props {
 
 function GenreList({ onSelectGenre, selectedGenreId }: Props) {
   const { data, isLoading, error } = useGenres();
-  console.log(data);
 
   if (isLoading) return <Spinner marginLeft={"15px"}></Spinner>;
   if (error) return null;
