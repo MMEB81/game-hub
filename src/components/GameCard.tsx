@@ -17,7 +17,7 @@ function GameCard({ game }: Props) {
       <CardBody>
         <HStack justifyContent={"space-between"} marginBottom={3}>
           <PlatformIconList
-            platforms={game.parent_platforms.map(({ platform }) => {
+            platforms={game.parent_platforms?.map(({ platform }) => {
               return platform;
             })}
           />
