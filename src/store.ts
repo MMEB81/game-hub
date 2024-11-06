@@ -1,8 +1,8 @@
+import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 import { Order } from "./components/SortOrderSelector";
 import { Genre } from "./services/genreService";
 import { Platform } from "./services/platformService";
-import {mountStoreDevtool} from "simple-zustand-devtools"
 
 
 
@@ -22,6 +22,7 @@ interface GameQueryStore {
     onSelectPlatform : (platform : Platform) => void ;
     onSelectOrder : (order : Order | null )=> void
 
+
 }
 
 const useGameQueryStore = create<GameQueryStore>(set => ({
@@ -39,8 +40,8 @@ const useGameQueryStore = create<GameQueryStore>(set => ({
     })),
     onSelectOrder : (order) => set((store)=> ({
         gameQuery : {...store.gameQuery,order : order}
-    }))
-
+    })),
+  
 }))
 
 if (process.env.NODE_ENV) 
