@@ -4,9 +4,11 @@ interface Resolation {
     max : string
 
 }
-export interface GameTrailer {
+interface GameTrailer {
     id : number
     name: string
     preview : string
     data : Resolation
 }
+
+export default GameTrailer

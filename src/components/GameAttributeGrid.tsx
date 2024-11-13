@@ -1,5 +1,5 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
-import { Game } from "../entities/Game";
+import Game from "../entities/Game";
 import GameAttribute from "./GameAttribute";
 import ScoreBadge from "./ScoreBadge";
 

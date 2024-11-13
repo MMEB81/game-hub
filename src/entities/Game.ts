@@ -1,9 +1,9 @@
-import { Platform } from "../entities/Platform";
-import { Genre } from "./Genre";
-import { Publisher } from "./Publisher";
+import  Platform  from "../entities/Platform";
+import  Genre  from "./Genre";
+import  Publisher  from "./Publisher";
 
 
-export interface Game {
+interface Game {
   id: number;
   name: string;
   background_image: string;
@@ -16,3 +16,5 @@ export interface Game {
   publishers : Publisher[]
 
 }
+
+export default Game
