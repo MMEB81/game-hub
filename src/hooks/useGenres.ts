@@ -4,7 +4,7 @@ import ms from "ms";
 import genres from "../data/genres";
 import { FetchDataResponse } from "../services/api-client";
 import genreService from "../services/genreService";
-import { Genre } from "../entities/Genre";
+import  Genre from "../entities/Genre";
 
 
 

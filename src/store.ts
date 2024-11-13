@@ -1,8 +1,8 @@
 import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 import { Order } from "./components/SortOrderSelector";
-import { Genre } from "./entities/Genre";
-import { Platform } from "./entities/Platform";
+import  Genre  from "./entities/Genre";
+import  Platform  from "./entities/Platform";
 
 
 
